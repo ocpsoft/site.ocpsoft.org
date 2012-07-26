@@ -42,14 +42,36 @@ if( !is_admin() )
 	wp_enqueue_style("prettify");
 
 	wp_enqueue_script("jquery");
+	wp_enqueue_script("bootstrap-dropdown");
 }
 
 /**
  This theme uses the wp_nav_menu() for top navigation
  */
+include 'nav-walker.php';
+
 register_nav_menus( array(
 		'primary' => 'Primary Navigation'
 ) );
+
+add_filter('wp_nav_menu_objects', function ($items) {
+	$hasSub = function ($menu_item_id, &$items) {
+		foreach ($items as $item) {
+			if ($item->menu_item_parent && $item->menu_item_parent==$menu_item_id) {
+				return true;
+			}
+		}
+		return false;
+	};
+
+	foreach ($items as &$item) {
+		if ($hasSub($item->ID, &$items)) {
+			$item->isSub = true;
+			$item->classes[] = 'dropdown'; // all elements of field "classes" of a menu item get join together and render to class attribute of <li> element in HTML
+		}
+	}
+	return $items;
+});
 
 // Preserve comments for legacy 2.7 WP versions
 add_filter( 'comments_template', 'legacy_comments' );
