@@ -1,0 +1,121 @@
+/* Alerts */
+.entry .alert {
+	display: block;
+	z-index: 100;
+	border: 0;
+	color: #444;
+}
+
+.entry .alert>a {
+	color: #B60;
+}
+
+.entry .alert>span,.entry .alert>pre,.entry .alert>div {
+	display: block;
+	margin-left: 22px;
+	margin-top: 20px;
+	padding: 1em 24px;
+	z-index: 1;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.entry .alert.command {
+	background: url("../img/icon_command.png") no-repeat scroll 15px 31px
+		transparent;
+	font-family: "andale mono", "lucida console";
+	font-style: monospace;
+}
+
+.entry .alert.command>pre {
+	background: url("../img/icon_command.png") no-repeat scroll -22px 2px
+		#333;
+	color: #eeeeee;
+	white-space: pre-wrap;
+}
+
+.entry .alert.tip {
+	background: url("../img/icon_info.png") no-repeat scroll 15px 30px
+		transparent;
+}
+
+.entry .alert.tip>span,.entry .alert.tip>div {
+	background: url("../img/icon_info.png") no-repeat scroll -22px 2px
+		#B9D794;
+}
+
+.entry .alert.warn {
+	background: url("../img/icon_warning.png") no-repeat scroll 15px 30px
+		transparent;
+}
+
+.entry .alert.warn>span,.entry .alert.warn>div {
+	background: url("../img/icon_warning.png") no-repeat scroll -22px 2px
+		#F4C062;
+}
+
+.entry .alert.error {
+	background: url("../img/icon_error.png") no-repeat scroll 15px 30px
+		transparent;
+}
+
+.entry .alert.error>span,.entry .alert.error>div {
+	background: url("../img/icon_error.png") no-repeat scroll -22px 2px
+		#F9D9D8;
+}
+
+pre.command {
+	border: 1px solid #AAAAAA;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 1px 1px 5px #CCCCCC;
+	font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New',
+		Courier, monospace;
+	font-size: 14px;
+	overflow-x: auto;
+	padding: 8px 1px 8px 10px;
+}
+
+pre.command.noborder {
+	border: 0 none;
+	border-radius: 0 0 0 0;
+	box-shadow: none;
+	padding: 0;
+}
+
+.snippit {
+	margin-top: 0px;
+	margin-bottom: 15px;
+	white-space: pre-wrap;
+	border: 1px solid #AAAAAA;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 1px 1px 5px #CCCCCC;
+	background-color: #fafafa;
+	background-position: 3px 3px;
+	background-repeat: no-repeat;
+}
+
+pre.prettyprint {
+	background: inherit;
+	border: none;
+	margin-bottom: 0px;
+}
+
+a.snippit-file {
+	padding-right: 18px;
+	background: url("../img/icon_snippit.png") no-repeat scroll right;
+	background-size: 15px 15px;
+}
+
+.snippit-filename {
+	background: none repeat scroll 0 0 #CBE1AF;
+	border-radius: 2px 2px 2px 2px;
+	color: #333333;
+	padding: 3px 10px 3px 10px;
+	text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
+}
+
+code {
+	white-space: pre-wrap;
+}
