@@ -347,7 +347,8 @@ footer li {
 }
 
 footer h3 {
-	color: #eee;
+	color: #ddd;
+	margin-top: 8px;
 	font-weight: normal;
 }
 

@@ -1,5 +1,9 @@
 <footer>
 
+	<div>
+		<a href="<?php bloginfo('url'); ?>"><img alt="OCPSoft logo" src="<?php bloginfo('stylesheet_directory');?>/img/desktop_logo_white.png" /> </a>
+	</div>
+
 	<?php 
 	wp_nav_menu(array(
 			'theme_location'  => 'footer',
@@ -17,7 +21,7 @@
 	<p class="copyright">
 		&copy;
 		<?=date('Y');?>
-		<a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?> </a> All Rights Reserved. <a href="#">Terms of Use</a> and <a href="#">Privacy</a>
+		<a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?> </a> All Rights Reserved. 
 	</p>
 
 	<?php wp_footer(); ?>
