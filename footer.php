@@ -64,18 +64,4 @@
 	?>
 	<script type="text/javascript">jQuery(function(){jQuery('.slide-out-div').tabSlideOut({ tabHandle: '.handle',tabLocation: 'left',speed: 300,action: 'click',topPos: '300px', leftPos: '20px', fixedPosition: true});});</script>
 
-	<!-- Blinking cursor -->
-	<script type="text/javascript">
-			window.setInterval(function(){
-				var c = $(".ocpsoft-blinking-cursor");
-				if (c.data('on')===true) {
-					c.hide();
-					c.data('on',false);
-				}
-				else {
-					c.data('on',true);
-					c.show();
-				}
-			},500)
-		</script>
 </footer>

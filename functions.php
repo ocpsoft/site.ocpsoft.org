@@ -342,9 +342,10 @@ function widget_indigo_search() {
 	?>
 
 <ul>
-	<li><label for="s"><h1>
-				<?php _e('Search Posts'); ?>
-			</h1> </label>
+	<li><h1>
+			<label for="s"> <?php _e('Search Posts'); ?>
+			</label>
+		</h1>
 		<form id="searchform" method="get" action="<?php bloginfo('url'); ?>/index.php">
 
 			<input type="text" name="s" size="18" /><br> <input type="submit" id="submit" name="Submit" value="Search" />

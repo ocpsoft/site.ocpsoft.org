@@ -10,7 +10,9 @@
 <body>
 	<a id="top"></a>
 	<div class="container">
-		<?php include 'navbar.php';?>
+		<div class="ocpsoft-toparea">
+			<?php include 'navbar.php';?>
+		</div>
 		<div class="ocpsoft-middlearea">
 			<div class="ocpsoft-middlearea-shadow-top">
 				<div class="ocpsoft-middlearea-shadow-bottom">

@@ -9,6 +9,11 @@
 body {
 	background: #383B3D !important;
 	padding: 0;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
+		"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: 300;
+	font-size: 13px;
+	line-height: 20px;
 }
 
 code {
@@ -124,7 +129,7 @@ code {
 		0%, rgba(49, 113, 193, 1) 100% ); /* IE10+ */
 	background: radial-gradient(ellipse at center, rgba(131, 170, 218, 1) 0%,
 		rgba(49, 113, 193, 1) 100% ); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient(              startColorstr='#83aada',
+	filter: progid:DXImageTransform.Microsoft.gradient(               startColorstr='#83aada',
 		endColorstr='#3171c1', GradientType=1 );
 	/* IE6-8 fallback on horizontal gradient */
 	min-height: 76px;
