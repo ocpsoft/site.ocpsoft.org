@@ -85,11 +85,11 @@ class OCPsoft_Nav_Menu extends Walker {
 
 		$item_output = $args->before;
 
-		if($item->isSub && $depth == 0)
+		if($item->hasSub && $depth == 0)
 		{
 			$item_output .= '<a href="#" class="dropdown-toggle" data-toggle="dropdown" >';
 			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-			$item_output .= '<b class="caret"></b></a>';	
+			$item_output .= '<b class="caret"></b></a>';
 		}
 		else
 		{

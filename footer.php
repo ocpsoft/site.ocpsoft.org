@@ -1,52 +1,18 @@
 <footer>
-	<div>
-		<h3>OCPSoft</h3>
-		<ul>
-			<li><a href="#">About Us</a></li>
-			<li><a href="#">Our Blog</a></li>
-			<li><a href="#">Our Customers</a></li>
-			<li><a href="#">Latest News & Events</a></li>
-		</ul>
-	</div>
 
-	<div>
-		<h3>Features</h3>
-		<ul>
-			<li><a href="#">Modern Web</a></li>
-			<li><a href="#">Data Access</a></li>
-			<li><a href="#">Integration</a></li>
-		</ul>
-	</div>
+	<?php 
+	wp_nav_menu(array(
+			'theme_location'  => 'footer',
+			'container'       => '',
+			'items_wrap'      => '%3$s',
+			'walker'          => new OCPsoft_Footer_Menu()
+	));
+	?>
 
-	<div>
-		<h3>Get Started</h3>
-		<ul>
-			<li><a href="#">Grab the Tool</a></li>
-			<li><a href="#">Tutorials</a></li>
-			<li><a href="#">Code Samples</a></li>
-			<li><a href="#">Documentation</a></li>
-			<li><a href="#">Forums</a></li>
-			<li><a href="#">Training</a></li>
-		</ul>
-	</div>
-
-	<div>
-		<h3>Get Involved</h3>
-		<ul>
-			<li><a href="#">Discussions</a></li>
-			<li><a href="#">Issue Tracker</a></li>
-			<li><a href="#">Source Repository</a></li>
-		</ul>
-	</div>
-
-	<div>
-		<h3>Projects</h3>
-		<ul>
-			<li><a href="#">PrettyFaces</a></li>
-			<li><a href="#">Rewrite</a></li>
-			<li><a href="#">SocialPM</a></li>
-		</ul>
-	</div>
+	<?php 
+	if (function_exists('get_sidebar'))
+		get_sidebar('footer');
+	?>
 
 	<p class="copyright">
 		&copy;

@@ -48,10 +48,15 @@ if( !is_admin() )
 /**
  This theme uses the wp_nav_menu() for top navigation
  */
-include 'nav-walker.php';
+include 'walker-nav-header.php';
+include 'walker-nav-footer.php';
 
 register_nav_menus( array(
 		'primary' => 'Primary Navigation'
+) );
+
+register_nav_menus( array(
+		'footer' => 'Footer Navigation'
 ) );
 
 add_filter('wp_nav_menu_objects', function ($items) {
@@ -66,7 +71,7 @@ add_filter('wp_nav_menu_objects', function ($items) {
 
 	foreach ($items as &$item) {
 		if ($hasSub($item->ID, &$items)) {
-			$item->isSub = true;
+			$item->hasSub = true;
 			$item->classes[] = 'dropdown'; // all elements of field "classes" of a menu item get join together and render to class attribute of <li> element in HTML
 		}
 	}
@@ -298,9 +303,19 @@ add_shortcode('toc', 'toc');
 <?php
 
 register_sidebar( array(
-		'name' => __( 'Header Area', 'indigo' ),
+		'name' => __( 'Header Area', 'ocpsoft' ),
 		'id' => 'sidebar-header',
-		'description' => __( 'An optional widget area for the  site header', 'indigo' ),
+		'description' => __( 'An optional widget area for the site header', 'ocpsoft' ),
+		'before_widget' => '',
+		'after_widget' => "",
+		'before_title' => '',
+		'after_title' => '',
+) );
+
+register_sidebar( array(
+		'name' => __( 'Footer Area', 'ocpsoft' ),
+		'id' => 'sidebar-header',
+		'description' => __( 'An optional widget area for the site footer', 'ocpsoft' ),
 		'before_widget' => '',
 		'after_widget' => "",
 		'before_title' => '',
@@ -309,7 +324,7 @@ register_sidebar( array(
 
 if ( function_exists('register_sidebar') )
 	register_sidebar(array(
-			'name' => __( 'Sidebar Area', 'indigo' ),
+			'name' => __( 'Sidebar Area', 'ocpsoft' ),
 			'id' => 'sidebar-1',
 			'before_widget' => '<div class="sidebar-widget"><div class="sidebar-widget-content">',
 			'after_widget' => '</div></div>',

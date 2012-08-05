@@ -24,7 +24,7 @@
 		</li>
 		<?php 
 		$settings = array(
-				'theme_location'  => '',
+				'theme_location'  => 'primary',
 				'menu'            => '',
 				'container'       => 'ul',
 				'container_class' => '',

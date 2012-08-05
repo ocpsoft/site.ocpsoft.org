@@ -80,6 +80,8 @@ h1,h2,h3,h4,h5,h6 {
 	-moz-box-shadow: 0 0 15px #333;
 	-webkit-box-shadow: 0 0 15px #333;
 	box-shadow: 0 0 15px #333;
+	padding-right: 5px;
+	padding-left: 5px;
 }
 
 .ocpsoft-nav ul {
@@ -96,7 +98,7 @@ h1,h2,h3,h4,h5,h6 {
 	width: 170px;
 }
 
-.ocpsoft-nav li a {
+.ocpsoft-nav > ul > li > a {
 	border-left: 1px solid #ddd;
 	text-align: center;
 	padding: 20px;
@@ -157,7 +159,7 @@ h1,h2,h3,h4,h5,h6 {
 		0%, rgba(49, 113, 193, 1) 100% ); /* IE10+ */
 	background: radial-gradient(ellipse at center, rgba(131, 170, 218, 1) 0%,
 		rgba(49, 113, 193, 1) 100% ); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient(    
+	filter: progid:DXImageTransform.Microsoft.gradient(      
 		                     startColorstr='#83aada', endColorstr='#3171c1',
 		GradientType=1 );
 	/* IE6-8 fallback on horizontal gradient */
@@ -367,6 +369,10 @@ footer p {
 	padding: 20px 0;
 }
 
+footer .caret {
+	border-top-color: white;
+}
+
 @media ( min-width : 768px) {
 	.hero-unit .primary {
 		width: 50%;
@@ -502,7 +508,7 @@ footer p {
 
 .sidebar h1,.sidebar h2,.sidebar h3,.sidebar h4,.sidebar h5,.sidebar h6
 	{
-	color: #7c97d6;
+	color: #6c97d6;
 }
 
 .sidebar h3 {
@@ -524,7 +530,8 @@ footer p {
 	padding: 0px;
 	background: #f3f7fc;
 	border: none;
-	margin-bottom: 25px; -webkit-border-bottom-right-radius : 7px;
+	margin-bottom: 25px;
+	-webkit-border-bottom-right-radius: 7px;
 	-webkit-border-bottom-left-radius: 7px;
 	-moz-border-radius-bottomright: 7px;
 	-moz-border-radius-bottomleft: 7px;
@@ -553,6 +560,10 @@ footer p {
 
 #toc-contents ol li:FIRST-CHILD {
 	margin-top: 0px;
+}
+
+#toc-outer {
+	margin-bottom: 25px;
 }
 
 /** Comments List */
