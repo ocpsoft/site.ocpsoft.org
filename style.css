@@ -6,11 +6,32 @@
     Description:
         Styles for the new OCPSoft design.
 */
+@font-face {
+	font-family: 'Helvetica Neue Light';
+	src: url('../fonts/HelveticaNeueTPro-Lt.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Helvetica Neue Light';
+	src: url('../fonts/HelveticaNeueTPro-bd.otf') format('opentype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Helvetica Neue Light';
+	src: url('../fonts/HelveticaNeueTPro-Ltit.otf') format('opentype');
+	font-weight: normal;
+	font-style: italic;
+}
+
 body {
 	background: #383B3D !important;
 	padding: 0;
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
-		"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial,
+		Arial, sans-serif;
 	font-weight: 300;
 	font-size: 13px;
 	line-height: 20px;
@@ -18,6 +39,13 @@ body {
 
 code {
 	white-space: pre-wrap;
+}
+
+/*
+  Typography
+*/
+h1,h2,h3,h4,h5,h6 {
+	color: #555;
 }
 
 .clearer {
@@ -129,8 +157,9 @@ code {
 		0%, rgba(49, 113, 193, 1) 100% ); /* IE10+ */
 	background: radial-gradient(ellipse at center, rgba(131, 170, 218, 1) 0%,
 		rgba(49, 113, 193, 1) 100% ); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient(               startColorstr='#83aada',
-		endColorstr='#3171c1', GradientType=1 );
+	filter: progid:DXImageTransform.Microsoft.gradient(    
+		                     startColorstr='#83aada', endColorstr='#3171c1',
+		GradientType=1 );
 	/* IE6-8 fallback on horizontal gradient */
 	min-height: 76px;
 }
@@ -371,17 +400,6 @@ footer p {
 }
 
 /*
-  Typography
-*/
-.entry h1,.entry h2 {
-	margin-top: 50px;
-}
-
-.entry h3,.entry h4,.entry h5,.entry h6 {
-	margin-top: 30px;
-}
-
-/*
   Wordpress Styles
 */
 .box-shadow {
@@ -410,6 +428,14 @@ footer p {
 .entry-img {
 	position: relative;
 	top: -2px;
+}
+
+.entry h1,.entry h2 {
+	margin-top: 50px;
+}
+
+.entry h3,.entry h4,.entry h5,.entry h6 {
+	margin-top: 30px;
 }
 
 .more-link {
@@ -470,6 +496,15 @@ footer p {
 /*
  Sidebar
 */
+.sidebar {
+	color: #888;
+}
+
+.sidebar h1,.sidebar h2,.sidebar h3,.sidebar h4,.sidebar h5,.sidebar h6
+	{
+	color: #7c97d6;
+}
+
 .sidebar h3 {
 	text-transform: uppercase;
 	font-size: 1.2em;
@@ -485,18 +520,39 @@ footer p {
 	
 }
 
+.sidebar-widget {
+	padding: 0px;
+	background: #f3f7fc;
+	border: none;
+	margin-bottom: 25px; -webkit-border-bottom-right-radius : 7px;
+	-webkit-border-bottom-left-radius: 7px;
+	-moz-border-radius-bottomright: 7px;
+	-moz-border-radius-bottomleft: 7px;
+	border-bottom-right-radius: 7px;
+	border-bottom-left-radius: 7px;
+	-webkit-border-top-right-radius: 7px;
+	-webkit-border-top-left-radius: 7px;
+	-moz-border-radius-topright: 7px;
+	-moz-border-radius-topleft: 7px;
+	border-top-right-radius: 7px;
+	border-top-left-radius: 7px;
+	-webkit-border-bottom-right-radius: 7px;
+}
+
 .sidebar-widget-content {
 	padding: 10px;
 }
 
-.sidebar-widget {
-	padding: 0px;
-	background: rgb(220, 220, 200, .4);
-	border: none;
+#toc-contents ol {
+	list-style-type: none;
 }
 
-#toc {
-	background: #fff;
+#toc-contents ol li {
+	margin-top: 10px;
+}
+
+#toc-contents ol li:FIRST-CHILD {
+	margin-top: 0px;
 }
 
 /** Comments List */

@@ -1,6 +1,6 @@
 function toc_build() {
 
-	var $toc = jQuery('#toc');
+	var $toc = jQuery('#toc-contents');
 	var contents = "<ol>";
 
 	contents = contents + "<li><a href='#top'>Introduction</a></li>";
@@ -23,7 +23,8 @@ function toc_build() {
 
 function toc_init() {
 	var $toc = jQuery('#toc');
-	var $toc_outer = jQuery("#toc_outer");
+	var $toc_contents = jQuery('#toc-contents');
+	var $toc_outer = jQuery("#toc-outer");
 
 	var sections = jQuery(".entry h1, .toc"); //jQuery objects
 	var sectionOffsets = {}; //map: id -> int
@@ -49,7 +50,7 @@ function toc_init() {
 	$toc.css({height: $toc_outer.outerHeight(), width: $toc_outer.outerWidth()});
 
 	var bottomBumper = jQuery('.container').outerHeight() + jQuery('.container').offset().top - 25;
-	var linkColor = jQuery('#toc a:first').css('color');
+	var linkColor = jQuery('#toc-contents a:first').css('color');
 
 	var updateToc = function() {
 		var scrollY = jQuery(window).scrollTop();
