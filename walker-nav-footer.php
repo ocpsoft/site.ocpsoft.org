@@ -79,7 +79,7 @@ class OCPsoft_Footer_Menu extends Walker {
 		if($depth > 0)
 			$output .= $indent . '<li' . $id . $value . $class_names .'>';
 		else
-			$output .= "<div>";
+			$output .= "<div class='span2'>";
 
 		$attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
 		$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';

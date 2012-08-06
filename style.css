@@ -89,22 +89,77 @@ h1,h2,h3,h4,h5,h6 {
 	padding: 0;
 }
 
-.ocpsoft-nav li {
+.ocpsoft-nav ul li {
 	list-style-type: none;
 	float: left;
 }
 
-.ocpsoft-nav li.ocpsoft-logo {
+.ocpsoft-nav ul li.open>a {
+	color: #FFAA00;
+}
+
+.ocpsoft-nav ul li.ocpsoft-logo {
 	width: 170px;
 }
 
-.ocpsoft-nav > ul > li > a {
+.ocpsoft-nav>ul>li>a {
 	border-left: 1px solid #ddd;
 	text-align: center;
 	padding: 20px;
 	display: block;
 	text-transform: uppercase;
 	color: black;
+}
+
+
+.ocpsoft-nav>ul>li {
+}
+
+.ocpsoft-nav>ul>li>ul {
+	padding-bottom: 10px;
+}
+
+.ocpsoft-nav>ul>li>ul>li.dropdown {
+}
+
+.ocpsoft-nav>ul>li>ul>li.dropdown>a {
+	font-size: 18px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.ocpsoft-nav>ul>li>ul>li.dropdown>a:not([href] ) {
+	background-color: #fff;
+	color: #000;
+}
+
+.ocpsoft-nav>ul>li>ul>li.dropdown>ul {
+}
+
+.ocpsoft-nav>ul>li>ul>li.dropdown>ul>li {
+	float: left;
+}
+
+.ocpsoft-nav>ul>li>ul>li.dropdown>ul>li>a {
+	width: 150px;
+	white-space: normal;
+	margin-left: 10px;
+	margin-right: 10px;
+	
+	-webkit-border-top-right-radius: 4px;
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-bottom-right-radius: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	-moz-border-radius-topright: 4px;
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-bottomright: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
 }
 
 .ocpsoft-nav li.ocpsoft-logo a {
@@ -159,7 +214,7 @@ h1,h2,h3,h4,h5,h6 {
 		0%, rgba(49, 113, 193, 1) 100% ); /* IE10+ */
 	background: radial-gradient(ellipse at center, rgba(131, 170, 218, 1) 0%,
 		rgba(49, 113, 193, 1) 100% ); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient(      
+	filter: progid:DXImageTransform.Microsoft.gradient(          
 		                     startColorstr='#83aada', endColorstr='#3171c1',
 		GradientType=1 );
 	/* IE6-8 fallback on horizontal gradient */
