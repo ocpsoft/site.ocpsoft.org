@@ -135,6 +135,26 @@ h1,h2,h3,h4,h5,h6 {
 	color: #000;
 }
 
+.projects > ul {
+	width: 710px;
+	position: absolute;
+	left: -174px;
+}
+
+.projects > ul > li {
+	width: 170px;
+}
+
+.tutorials > ul {
+	width: 710px;
+	position: absolute;
+	left: -290px;
+}
+
+.tutorials > ul > li {
+	width: 170px;
+}
+
 .ocpsoft-nav>ul>li>ul>li.dropdown>ul {
 }
 
