@@ -10,6 +10,7 @@
 				'theme_location'  => 'footer',
 				'container'       => '',
 				'items_wrap'      => '%3$s',
+				'fallback_cb' => 'ocpsoft_menu_fallback',
 				'walker'          => new OCPsoft_Footer_Menu()
 		));
 		?>

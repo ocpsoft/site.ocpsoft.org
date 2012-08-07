@@ -8,41 +8,43 @@ $role->add_cap( 'unfiltered_html' );
 $role = get_role( 'contributor' );
 $role->add_cap( 'unfiltered_html' );
 
-wp_register_style("style", get_bloginfo('template_url')."/style.css");
-wp_register_style("prettify", get_bloginfo('template_url')."/js/google-code-prettify/prettify.css");
-wp_register_style("alerts", get_bloginfo('template_url')."/css/alerts.css");
-wp_register_style("bootstrap", get_bloginfo('template_url')."/css/bootstrap.css");
-wp_register_style("responsive", get_bloginfo('template_url')."/css/bootstrap-responsive.css");
+add_action('wp_enqueue_scripts', 'register_assets');
 
+function register_assets() {
+	wp_register_style("style", get_bloginfo('template_url')."/style.css");
+	wp_register_style("prettify", get_bloginfo('template_url')."/js/google-code-prettify/prettify.css");
+	wp_register_style("alerts", get_bloginfo('template_url')."/css/alerts.css");
+	wp_register_style("bootstrap", get_bloginfo('template_url')."/css/bootstrap.css");
+	wp_register_style("responsive", get_bloginfo('template_url')."/css/bootstrap-responsive.css");
 
-wp_register_script( "prettify", get_bloginfo("template_url")."/js/google-code-prettify/prettify.js");
-wp_register_script("jquery", get_bloginfo('template_url')."jquery.js");
-wp_register_script("bootstrap-transition", get_bloginfo('template_url')."/js/bootstrap-transition.js");
-wp_register_script("bootstrap-alert", get_bloginfo('template_url')."/js/bootstrap-alert.js");
-wp_register_script("bootstrap-modal", get_bloginfo('template_url')."/js/bootstrap-modal.js");
-wp_register_script("bootstrap-dropdown", get_bloginfo('template_url')."/js/bootstrap-dropdown.js");
-wp_register_script("bootstrap-scrollspy", get_bloginfo('template_url')."/js/bootstrap-scrollspy.js");
-wp_register_script("bootstrap-tab", get_bloginfo('template_url')."/js/bootstrap-tab.js");
-wp_register_script("bootstrap-tooltip", get_bloginfo('template_url')."/js/bootstrap-tooltip.js");
-wp_register_script("bootstrap-popover", get_bloginfo('template_url')."/js/bootstrap-popover.js");
-wp_register_script("bootstrap-button", get_bloginfo('template_url')."/js/bootstrap-button.js");
-wp_register_script("bootstrap-collapse", get_bloginfo('template_url')."/js/bootstrap-collapse.js");
-wp_register_script("bootstrap-carousel", get_bloginfo('template_url')."/js/bootstrap-carousel.js");
-wp_register_script("bootstrap-typeahead", get_bloginfo('template_url')."/js/typeahead.js");
-wp_register_script( "jquery.tabSlideOut", get_bloginfo("template_url")."/js/jquery.tabSlideOut.js");
-wp_register_script( "jquery.scrollTo", get_bloginfo("template_url")."/js/jquery.scrollTo.js");
-wp_register_script( "toc.functions", get_bloginfo("template_url")."/js/toc.functions.js");
+	wp_register_script( "prettify", get_bloginfo("template_url")."/js/google-code-prettify/prettify.js");
+	wp_register_script("jquery", get_bloginfo('template_url')."jquery.js");
+	wp_register_script("bootstrap-transition", get_bloginfo('template_url')."/js/bootstrap-transition.js");
+	wp_register_script("bootstrap-alert", get_bloginfo('template_url')."/js/bootstrap-alert.js");
+	wp_register_script("bootstrap-modal", get_bloginfo('template_url')."/js/bootstrap-modal.js");
+	wp_register_script("bootstrap-dropdown", get_bloginfo('template_url')."/js/bootstrap-dropdown.js");
+	wp_register_script("bootstrap-scrollspy", get_bloginfo('template_url')."/js/bootstrap-scrollspy.js");
+	wp_register_script("bootstrap-tab", get_bloginfo('template_url')."/js/bootstrap-tab.js");
+	wp_register_script("bootstrap-tooltip", get_bloginfo('template_url')."/js/bootstrap-tooltip.js");
+	wp_register_script("bootstrap-popover", get_bloginfo('template_url')."/js/bootstrap-popover.js");
+	wp_register_script("bootstrap-button", get_bloginfo('template_url')."/js/bootstrap-button.js");
+	wp_register_script("bootstrap-collapse", get_bloginfo('template_url')."/js/bootstrap-collapse.js");
+	wp_register_script("bootstrap-carousel", get_bloginfo('template_url')."/js/bootstrap-carousel.js");
+	wp_register_script("bootstrap-typeahead", get_bloginfo('template_url')."/js/typeahead.js");
+	wp_register_script( "jquery.tabSlideOut", get_bloginfo("template_url")."/js/jquery.tabSlideOut.js");
+	wp_register_script( "jquery.scrollTo", get_bloginfo("template_url")."/js/jquery.scrollTo.js");
+	wp_register_script( "toc.functions", get_bloginfo("template_url")."/js/toc.functions.js");
 
-if( !is_admin() )
-{
-	wp_enqueue_style("bootstrap");
-	wp_enqueue_style("responsive");
-	wp_enqueue_style("style");
-	wp_enqueue_style("alerts");
-	wp_enqueue_style("prettify");
-
-	wp_enqueue_script("jquery");
-	wp_enqueue_script("bootstrap-dropdown");
+	if( !is_admin() )
+	{
+		wp_enqueue_style("bootstrap");
+		wp_enqueue_style("responsive");
+		wp_enqueue_style("style");
+		wp_enqueue_style("alerts");
+		wp_enqueue_style("prettify");
+		wp_enqueue_script("jquery");
+		wp_enqueue_script("bootstrap-dropdown");
+	}
 }
 
 /**
@@ -58,6 +60,26 @@ register_nav_menus( array(
 register_nav_menus( array(
 		'footer' => 'Footer Navigation'
 ) );
+
+function ocpsoft_menu_fallback() {
+	$locations = get_theme_mod('nav_menu_locations');
+
+	if (! has_nav_menu('footer') && ! is_nav_menu( 'Footer Navigation' )) {
+		$locations['footer'] = wp_create_nav_menu('Footer Navigation', array('slug' => 'footer'));
+		set_theme_mod('nav_menu_locations', $locations);
+	} else {
+		$locations['footer'] = 'Footer Navigation';
+		set_theme_mod('nav_menu_locations', $locations);
+	}
+
+	if (! has_nav_menu('primary') && ! is_nav_menu( 'Primary Navigation' )) {
+		$locations['primary'] = wp_create_nav_menu('Primary Navigation', array('slug' => 'primary'));
+		set_theme_mod('nav_menu_locations', $locations);
+	} else {
+		$locations['primary'] = 'Primary Navigation';
+		set_theme_mod('nav_menu_locations', $locations);
+	}
+}
 
 add_filter('wp_nav_menu_objects', function ($items) {
 	$hasSub = function ($menu_item_id, &$items) {
@@ -302,27 +324,28 @@ add_shortcode('toc', 'toc');
 
 <?php
 
-register_sidebar( array(
-		'name' => __( 'Header Area', 'ocpsoft' ),
-		'id' => 'sidebar-header',
-		'description' => __( 'An optional widget area for the site header', 'ocpsoft' ),
-		'before_widget' => '',
-		'after_widget' => "",
-		'before_title' => '',
-		'after_title' => '',
-) );
-
-register_sidebar( array(
-		'name' => __( 'Footer Area', 'ocpsoft' ),
-		'id' => 'sidebar-header',
-		'description' => __( 'An optional widget area for the site footer', 'ocpsoft' ),
-		'before_widget' => '',
-		'after_widget' => "",
-		'before_title' => '',
-		'after_title' => '',
-) );
-
 if ( function_exists('register_sidebar') )
+{
+	register_sidebar( array(
+			'name' => __( 'Header Area', 'ocpsoft' ),
+			'id' => 'sidebar-header',
+			'description' => __( 'An optional widget area for the site header', 'ocpsoft' ),
+			'before_widget' => '',
+			'after_widget' => "",
+			'before_title' => '',
+			'after_title' => '',
+	) );
+
+	register_sidebar( array(
+			'name' => __( 'Footer Area', 'ocpsoft' ),
+			'id' => 'sidebar-footer',
+			'description' => __( 'An optional widget area for the site footer', 'ocpsoft' ),
+			'before_widget' => '',
+			'after_widget' => "",
+			'before_title' => '',
+			'after_title' => '',
+	) );
+
 	register_sidebar(array(
 			'name' => __( 'Sidebar Area', 'ocpsoft' ),
 			'id' => 'sidebar-1',
@@ -331,71 +354,7 @@ if ( function_exists('register_sidebar') )
 			'before_title' => '<h3>',
 			'after_title' => '</h3>',
 	));
-
-// WP-indigo Pages Box
-function widget_indigo_pages() {
-	?>
-
-<h1>
-	<?php _e('Pages'); ?>
-</h1>
-<ul>
-	<li class="page_item"><a href="<?php bloginfo('url'); ?>">Home</a></li>
-
-	<?php wp_list_pages('title_li='); ?>
-
-</ul>
-
-<?php
 }
-if ( function_exists('register_sidebar_widget') )
-	register_sidebar_widget(__('Pages'), 'widget_indigo_pages');
-
-
-// WP-indigo Search Box
-function widget_indigo_search() {
-	?>
-
-<ul>
-	<li><h1>
-			<label for="s"> <?php _e('Search Posts'); ?>
-			</label>
-		</h1>
-		<form id="searchform" method="get" action="<?php bloginfo('url'); ?>/index.php">
-
-			<input type="text" name="s" size="18" /><br> <input type="submit" id="submit" name="Submit" value="Search" />
-
-
-		</form>
-	</li>
-</ul>
-
-<?php
-}
-if ( function_exists('register_sidebar_widget') )
-	register_sidebar_widget(__('Search'), 'widget_indigo_search');
-
-// WP-indigo Blogroll
-function widget_indigo_blogroll() {
-	?>
-
-<h1>
-	<?php _e('Blogroll'); ?>
-</h1>
-
-<ul>
-
-	<?php get_links(-1, '<li>', '</li>', '', FALSE, 'name', FALSE, FALSE, -1, FALSE); ?>
-
-</ul>
-
-
-
-<?php
-}
-if ( function_exists('register_sidebar_widget') )
-	register_sidebar_widget(__('Blogroll'), 'widget_indigo_blogroll');
-
 
 function the_subpages()
 {

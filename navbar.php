@@ -10,7 +10,10 @@
 			<div class="nav-collapse collapse">
 				<ul class="nav">
 					<?php 
-					wp_nav_menu( array( 'items_wrap' => '%3$s' ) );
+					wp_nav_menu( array(
+							'theme_location'  => 'primary',
+							'items_wrap' => '%3$s',
+							'fallback_cb' => 'ocpsoft_menu_fallback' ) );
 					?>
 				</ul>
 			</div>
@@ -23,7 +26,7 @@
 		<li class="ocpsoft-logo"><a href="<?php bloginfo('url'); ?>"><img alt="OCPSoft logo" src="<?php bloginfo('stylesheet_directory');?>/img/desktop_logo.png" /> </a>
 		</li>
 		<?php 
-		$settings = array(
+		wp_nav_menu( array(
 				'theme_location'  => 'primary',
 				'menu'            => '',
 				'container'       => 'ul',
@@ -40,9 +43,7 @@
 				'items_wrap'      => '%3$s',
 				'depth'           => 0,
 				'walker'          => new OCPsoft_Nav_Menu
-		);
-
-		wp_nav_menu( $settings );
+		) );
 		?>
 	</ul>
 	<div style="clear: both;"></div>

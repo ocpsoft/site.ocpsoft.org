@@ -1,10 +1,14 @@
-/* 
-    Document   : ocpsoft2012
-    Created on : Jun 28, 2012, 1:58:37 AM
-    Author     : Mike McNeil | Balderdash Design Company | balderdash.co
-    Author     : Lincoln Baxter | OCPsoft | ocpsoft.org
-    Description:
-        Styles for the new OCPSoft design.
+/*
+Theme Name: OCPsoft.org
+Theme URI: https://github.com/ocpsoft/site.ocpsoft.org
+Author: Lincoln Baxter, III
+Author URI: http://ocpsoft.org/
+Description: The official theme for the ocpsoft.org website
+Version: 1.0
+License: All Rights Reserved
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Text Domain: ocpsoft
 */
 @font-face {
 	font-family: 'Helvetica Neue Light';
@@ -111,8 +115,8 @@ h1,h2,h3,h4,h5,h6 {
 	color: black;
 }
 
-
 .ocpsoft-nav>ul>li {
+	
 }
 
 .ocpsoft-nav>ul>li>ul {
@@ -120,6 +124,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .ocpsoft-nav>ul>li>ul>li.dropdown {
+	
 }
 
 .ocpsoft-nav>ul>li>ul>li.dropdown>a {
@@ -130,32 +135,79 @@ h1,h2,h3,h4,h5,h6 {
 	padding-bottom: 5px;
 }
 
-.ocpsoft-nav>ul>li>ul>li.dropdown>a:not([href] ) {
-	background-color: #fff;
-	color: #000;
-}
+.ocpsoft-nav
+>
+ul
+>
+li
+>
+ul
+>
+li
 
-.projects > ul {
+
+.dropdown
+>
+a
+
+
+:not
+
+
+(
+[
+href
+]
+
+ 
+
+)
+{
+background-color
+
+
+:
+
+ 
+
+#fff
+
+
+;
+color
+
+
+:
+
+ 
+
+#000
+
+
+;
+}
+.projects>ul {
 	width: 710px;
 	position: absolute;
 	left: -174px;
 }
 
-.projects > ul > li {
+.projects>ul>li {
 	width: 170px;
 }
 
-.tutorials > ul {
+.tutorials>ul {
 	width: 710px;
 	position: absolute;
 	left: -290px;
 }
 
-.tutorials > ul > li {
+.tutorials>ul>li {
 	width: 170px;
 }
 
 .ocpsoft-nav>ul>li>ul>li.dropdown>ul {
+	
 }
 
 .ocpsoft-nav>ul>li>ul>li.dropdown>ul>li {
@@ -167,7 +219,6 @@ h1,h2,h3,h4,h5,h6 {
 	white-space: normal;
 	margin-left: 10px;
 	margin-right: 10px;
-	
 	-webkit-border-top-right-radius: 4px;
 	-webkit-border-top-left-radius: 4px;
 	-webkit-border-bottom-right-radius: 4px;
@@ -234,7 +285,7 @@ h1,h2,h3,h4,h5,h6 {
 		0%, rgba(49, 113, 193, 1) 100% ); /* IE10+ */
 	background: radial-gradient(ellipse at center, rgba(131, 170, 218, 1) 0%,
 		rgba(49, 113, 193, 1) 100% ); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient(          
+	filter: progid:DXImageTransform.Microsoft.gradient(            
 		                     startColorstr='#83aada', endColorstr='#3171c1',
 		GradientType=1 );
 	/* IE6-8 fallback on horizontal gradient */
@@ -599,7 +650,6 @@ footer .caret {
 }
 
 .sidebar-outer {
-	
 }
 
 .sidebar-widget {
@@ -619,6 +669,7 @@ footer .caret {
 	-moz-border-radius-topleft: 7px;
 	border-top-right-radius: 7px;
 	border-top-left-radius: 7px;
+	-webkit-border-bottom-right-radius: 7px;
 	-webkit-border-bottom-right-radius: 7px;
 }
 
