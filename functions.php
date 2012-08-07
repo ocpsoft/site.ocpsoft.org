@@ -44,6 +44,7 @@ function register_assets() {
 		wp_enqueue_style("prettify");
 		wp_enqueue_script("jquery");
 		wp_enqueue_script("bootstrap-dropdown");
+		wp_enqueue_script("bootstrap-collapse");
 	}
 }
 
@@ -55,6 +56,10 @@ include 'walker-nav-footer.php';
 
 register_nav_menus( array(
 		'primary' => 'Primary Navigation'
+) );
+
+register_nav_menus( array(
+		'mobile' => 'Mobile Navigation'
 ) );
 
 register_nav_menus( array(
@@ -79,6 +84,14 @@ function ocpsoft_menu_fallback() {
 		$locations['primary'] = 'Primary Navigation';
 		set_theme_mod('nav_menu_locations', $locations);
 	}
+
+	if (! has_nav_menu('mobile') && ! is_nav_menu( 'Mobile Navigation' )) {
+		$locations['mobile'] = wp_create_nav_menu('Mobile Navigation', array('slug' => 'mobile'));
+		set_theme_mod('nav_menu_locations', $locations);
+	} else {
+		$locations['mobile'] = 'Mobile Navigation';
+		set_theme_mod('nav_menu_locations', $locations);
+	}
 }
 
 add_filter('wp_nav_menu_objects', function ($items) {
@@ -96,6 +109,8 @@ add_filter('wp_nav_menu_objects', function ($items) {
 			$item->hasSub = true;
 			$item->classes[] = 'dropdown'; // all elements of field "classes" of a menu item get join together and render to class attribute of <li> element in HTML
 		}
+		else
+			$item->hasSub = false;
 	}
 	return $items;
 });

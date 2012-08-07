@@ -7,13 +7,19 @@
 			</button>
 			<a class="brand" href="<?php bloginfo('url'); ?>"> ocpsoft <!--	<img alt="OCPSoft logo" src="./img/desktop_logo.png"/>-->
 			</a>
-			<div class="nav-collapse collapse">
+			<div class="nav-collapse in collapse">
 				<ul class="nav">
 					<?php 
 					wp_nav_menu( array(
-							'theme_location'  => 'primary',
-							'items_wrap' => '%3$s',
-							'fallback_cb' => 'ocpsoft_menu_fallback' ) );
+							'theme_location'  => 'mobile',
+							'fallback_cb'     => 'wp_page_menu',
+							'items_wrap'      => '%3$s',
+							'depth'           => 1,
+							'container'       => '',
+							'container_class' => '',
+							'container_id'    => '',
+							'walker'          => new OCPsoft_Nav_Menu()
+					) );
 					?>
 				</ul>
 			</div>
