@@ -6,7 +6,7 @@
 			<!-- Google+ -->
 
 			<div style="margin-top: 90px;">
-				<div class="g-plusone" data-annotation="inline"></div>
+				<div class="g-plusone" data-annotation="none"></div>
 			</div>
 			
 			<!-- Place this tag after the last +1 button tag. -->
