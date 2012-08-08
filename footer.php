@@ -3,20 +3,7 @@
 	<div class="row-fluid">
 		<div class="span5">
 			<a href="<?php bloginfo('url'); ?>"><img alt="OCPSoft logo" src="<?php bloginfo('stylesheet_directory');?>/img/desktop_logo_white.png" /> </a>
-			<!-- Google+ -->
 
-			<div style="margin-top: 90px;">
-				<div class="g-plusone" data-annotation="none"></div>
-			</div>
-			
-			<!-- Place this tag after the last +1 button tag. -->
-			<script type="text/javascript">
-			  (function() {
-			    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-			    po.src = 'https://apis.google.com/js/plusone.js';
-			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-			  })();
-			</script>
 		</div>
 
 		<?php 
@@ -35,11 +22,26 @@
 		dynamic_sidebar('sidebar-footer');
 	?>
 
+
 	<p class="copyright">
+		
+		<span class="pull-left" style="margin-left: 25px;">
+		<span class="g-plusone" data-annotation="none"></span>
+		</span>
+			<script type="text/javascript">
+			  (function() {
+			    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			    po.src = 'https://apis.google.com/js/plusone.js';
+			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+			  })();
+			</script>
+	
 		&copy;
 		<?=date('Y');?>
 		<a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?> </a> All Rights Reserved.
 	</p>
+	
+	
 
 	<?php wp_footer(); ?>
 
