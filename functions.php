@@ -122,7 +122,18 @@ function legacy_comments( $file ) {
 		$file = TEMPLATEPATH . '/legacy.comments.php';
 	return $file;
 }
+
+// Fix up the search form
+add_filter('get_search_form', 'my_search_form');
+
+function my_search_form($text) {
+	$text = str_replace('type="submit"', 'type="submit" class="btn"', $text);
+	$text = str_replace('<form', '<form class="form-inline"', $text);
+	$text = str_replace('Search for:', '', $text);
+	return $text;
+}
 ?>
+
 
 <?php 
 // Embed HTML directly as a custom-field shortcode:

@@ -15,7 +15,7 @@
 
 			<?php while (have_posts()) : the_post(); ?>
 
-			<?php print get_the_content(); ?>
+			<?php the_content(); ?>
 
 			<?php endwhile; ?>
 

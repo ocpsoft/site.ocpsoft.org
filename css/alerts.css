@@ -85,7 +85,7 @@ pre.command.noborder {
 }
 
 .snippit {
-	margin-top: 0px;
+	margin-top: 15px;
 	margin-bottom: 15px;
 	white-space: pre-wrap;
 	border: 1px solid #AAAAAA;
