@@ -353,7 +353,7 @@ add_shortcode('toc', 'toc');
 if ( function_exists('register_sidebar') )
 {
 	register_sidebar( array(
-			'name' => __( 'Header Area', 'ocpsoft' ),
+			'name' => 'Header Area',
 			'id' => 'sidebar-header',
 			'description' => __( 'An optional widget area for the site header', 'ocpsoft' ),
 			'before_widget' => '',
@@ -363,7 +363,7 @@ if ( function_exists('register_sidebar') )
 	) );
 
 	register_sidebar( array(
-			'name' => __( 'Footer Area', 'ocpsoft' ),
+			'name' => 'Footer Area',
 			'id' => 'sidebar-footer',
 			'description' => __( 'An optional widget area for the site footer', 'ocpsoft' ),
 			'before_widget' => '',
@@ -373,7 +373,7 @@ if ( function_exists('register_sidebar') )
 	) );
 
 	register_sidebar(array(
-			'name' => __( 'Sidebar Area', 'ocpsoft' ),
+			'name' => 'Sidebar Area',
 			'id' => 'sidebar-1',
 			'before_widget' => '<div class="sidebar-widget"><div class="sidebar-widget-content">',
 			'after_widget' => '</div></div>',

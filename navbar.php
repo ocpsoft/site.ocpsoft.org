@@ -55,6 +55,6 @@
 	<div style="clear: both;"></div>
 </div>
 <?php 
-if (function_exists('get_sidebar'))
-	get_sidebar('header');
+if (is_active_sidebar('sidebar-header'))
+	dynamic_sidebar('sidebar-header');
 ?>
