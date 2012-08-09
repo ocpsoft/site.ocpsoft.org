@@ -48,7 +48,7 @@
 										<?php edit_post_link('Edit','',' | '); ?>
 										<img class="entry-img" src="<?php bloginfo('stylesheet_directory'); ?>/img/comments.gif" />
 										<?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?>
-										<a class="more-link pull-right" href="<?php print get_permalink(the_ID()); ?>"> Read the full article &raquo;</a>
+										<a class="more-link pull-right" href="<?php print get_permalink(get_the_ID()); ?>"> Read the full article &raquo;</a>
 									</div>
 
 								</section>
