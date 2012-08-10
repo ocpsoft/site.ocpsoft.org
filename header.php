@@ -14,7 +14,7 @@
 <link rel="alternate" type="text/xml" title="RSS .92" href="<?php bloginfo('rss_url'); ?>" />
 <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?php bloginfo('atom_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<link rel="SHORTCUT ICON" href="<?php bloginfo('stylesheet_directory');?>/ico/favicon.ico"></link>
+<link rel="SHORTCUT ICON" href="<?php bloginfo('stylesheet_directory');?>/ico/favicon.ico" />
 <?php wp_get_archives('type=monthly&format=link'); ?>
 
 <!-- HTML5 shim (for IE6-8 support of HTML5 elements) -->
