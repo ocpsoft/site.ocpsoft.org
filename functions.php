@@ -132,10 +132,7 @@ function my_search_form($text) {
 	$text = str_replace('Search for:', '', $text);
 	return $text;
 }
-?>
 
-
-<?php 
 // Embed HTML directly as a custom-field shortcode:
 // [field name=name-of-custom-field]
 
@@ -329,9 +326,6 @@ function slide_out($atts, $content)
 
 add_shortcode('slideout', 'slide_out');
 
-?>
-
-<?php
 function toc($atts, $content)
 {
 	if(is_single() || is_page())
@@ -346,9 +340,6 @@ function toc($atts, $content)
 }
 
 add_shortcode('toc', 'toc');
-?>
-
-<?php
 
 if ( function_exists('register_sidebar') )
 {

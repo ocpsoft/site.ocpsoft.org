@@ -604,6 +604,7 @@ footer .caret {
 }
 
 .sidebar-widget {
+	overflow: hidden;
 	padding: 0px;
 	background: #f3f7fc;
 	border: none;
