@@ -373,29 +373,6 @@ if ( function_exists('register_sidebar') )
 	));
 }
 
-function the_subpages()
-{
-	global $post, $wpdb;
-
-	if ( is_page() )
-	{
-		if ( $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->posts WHERE post_type='page' AND post_parent = ".$post->ID) > 0 ){
-			$subpages = $post->ID;
-		}
-		else if ( $post->post_parent != 0 ){
-			$subpages = $post->post_parent;
-		}
-
-		if ($subpages)
-		{
-			echo '<h1>Subpages</h1>' . "\n";
-			echo '<ul>' . "\n";
-			wp_list_pages('title_li=&child_of='.$subpages);
-			echo '</ul>' . "\n";
-		}
-	}
-}
-
 function the_error_page()
 {
 	include 'error.php';
