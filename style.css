@@ -747,7 +747,7 @@ footer .caret {
 	opacity: .6;
 }
 
-.featured, .subpages ul {
+.featured {
 	margin-bottom: 15px;
 	border: solid 1px #aabbbb; 
 	padding: 15px; 
@@ -768,29 +768,6 @@ footer .caret {
 	border-top-left-radius: 7px;
 	-webkit-border-bottom-right-radius: 7px;
 	-webkit-border-bottom-right-radius: 7px;
-}
-
-.subpages ul li {
-	background: #fff; 
-	margin-top: 5px;
-	-webkit-border-bottom-right-radius: 7px;
-	-webkit-border-bottom-left-radius: 7px;
-	-moz-border-radius-bottomright: 7px;
-	-moz-border-radius-bottomleft: 7px;
-	border-bottom-right-radius: 7px;
-	border-bottom-left-radius: 7px;
-	-webkit-border-top-right-radius: 7px;
-	-webkit-border-top-left-radius: 7px;
-	-moz-border-radius-topright: 7px;
-	-moz-border-radius-topleft: 7px;
-	border-top-right-radius: 7px;
-	border-top-left-radius: 7px;
-	-webkit-border-bottom-right-radius: 7px;
-	-webkit-border-bottom-right-radius: 7px;
-}
-
-.subpages ul :FIRST-CHILD {
-	margin-top: 0;
 }
 
 .featured h1, .featured h2, .featured h3, .featured h4, .featured h5 {
