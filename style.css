@@ -645,6 +645,11 @@ footer .caret {
 	width: inherit;
 }
 
+#toc .sidebar-widget-content {
+	padding-bottom: 25px;
+	border-bottom: solid 2px #EEE;
+}
+
 #toc .sidebar-widget {
 	background: #fff;
 	-webkit-border-bottom-right-radius: 0px;
