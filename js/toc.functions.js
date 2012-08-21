@@ -1,11 +1,10 @@
-function toc_build() {
+function toc_build(section_scroll_offset) {
 
 	var $toc = jQuery('#toc-contents');
 	var contents = "<ol>";
 
-	contents = contents + "<li><a href='#top'>Introduction</a></li>";
 
-	jQuery(".entry h1, .toc").each(function(idx) {
+	jQuery("#top, .entry h1, .toc, #comments").each(function(idx) {
 		var section = jQuery(this);
 
 		contents = contents + "<li><a id='"+section.attr("id")+"_link' href='#" + section.attr("id") + "'>"+section.html()+"</a></li>";
@@ -17,7 +16,7 @@ function toc_build() {
 	$toc.html(contents);
 	$toc.prepend("<h3>Table of Contents</h3>");
 	$toc.append("<div id='toc_fade'></div>");
-	$toc.localScroll({hash: true, offset: {top: -50}});
+	$toc.localScroll({hash: true, offset: {top: section_scroll_offset}});
 
 }
 
@@ -26,7 +25,9 @@ function toc_init() {
 	var $toc_contents = jQuery('#toc-contents');
 	var $toc_outer = jQuery("#toc-outer");
 
-	var sections = jQuery(".entry h1, .toc"); //jQuery objects
+	var section_offset = -40;
+	var section_scroll_offset = -30;
+	var sections = jQuery(".entry h1, .entry h2, .toc, #comments"); //jQuery objects
 	var sectionOffsets = {}; //map: id -> int
 	var currentSection = false;
 
@@ -34,11 +35,11 @@ function toc_init() {
 	sections.each(function(idx) {
 		var section = jQuery(this);
 		section.attr("id", "section-" + i);
-		sectionOffsets[i] = section.position().top;
+		sectionOffsets[i] = section.offset().top + section_offset;
 		i++;
 	});
 
-	toc_build();
+	toc_build(section_scroll_offset);
 
 	var tocMetrics = {
 		top: $toc.position().top,
@@ -49,7 +50,7 @@ function toc_init() {
 	$toc_outer.css({height: $toc_outer.outerHeight(), width: $toc_outer.outerWidth()});
 	$toc.css({height: $toc_outer.outerHeight(), width: $toc_outer.outerWidth()});
 
-	var bottomBumper = jQuery('.container').outerHeight() + jQuery('.container').offset().top - 25;
+	var bottomBumper = jQuery('.ocpsoft-middlearea').outerHeight() + jQuery('.ocpsoft-middlearea').offset().top - 25;
 	var linkColor = jQuery('#toc-contents a:first').css('color');
 
 	var updateToc = function() {
@@ -98,7 +99,7 @@ function toc_init() {
 		// highlight visible section
 		else {
 			jQuery.each(sections, function(idx, section) {
-				if (scrollY > sectionOffsets[idx] && (idx == numSections - 1 || scrollY < sectionOffsets[idx + 1])) {
+				if ((scrollY > sectionOffsets[idx]) && (idx == numSections - 1 || scrollY < sectionOffsets[idx + 1])) {
 					toggleSelection(section);
 				}
 			});
@@ -108,15 +109,53 @@ function toc_init() {
 	var toggleSelection = function(section) {
 		if (!section || section != currentSection) {
 			if (currentSection) {
-				jQuery('#' + currentSection.id + '_link').css({fontWeight: 'normal', color: linkColor});
+				jQuery('#' + currentSection.id + '_link').css({textDecoration: 'none', color: linkColor});
 			}
 			currentSection = section;
 			if (section) {
-				jQuery('#' + section.id + '_link').css({fontWeight: 'bold', color: '#333333'});
+				jQuery('#' + section.id + '_link').css({textDecoration: 'underline', color: '#333333'});
 			}
 		}
 	}
 
+	activateToTopControl();
 	updateToc();
 	jQuery(window).scroll(updateToc);
+	
+	// scroll to the selected section, if any
+	if (navigator.userAgent.indexOf("Chrome") < 0 && window.location.hash)
+		jQuery('html, body').animate({ scrollTop: jQuery(window.location.hash).offset().top + section_scroll_offset }, 'slow').delay(500);
+}
+
+function activateToTopControl() {
+  $toTop = jQuery('#toTop');
+
+  // skip this whole mess if we are hiding it on a device
+  if ($toTop.css('display') == 'none') {
+    return;
+  }
+
+  var tuckedAway = true;
+  var showOffset = (20) + 'px'
+  var hideOffset = '-50px';
+  var triggerOffset = 250;
+  jQuery(window).bind('scroll', function() {
+     if (jQuery(this).scrollTop() >= triggerOffset) {
+        if (tuckedAway) {
+           $toTop.animate({top: showOffset});
+        }
+        tuckedAway = false;
+     }
+     else {
+        if (!tuckedAway) {
+           $toTop.animate({top: hideOffset}); 
+        }
+        tuckedAway = true;
+     }
+  });
+
+  jQuery('#toTop').on('click', function() {
+    jQuery('html, body').animate({ scrollTop: 0 }, 'slow');
+    return false;
+  });
 }

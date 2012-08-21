@@ -44,6 +44,7 @@ function register_assets() {
 		wp_enqueue_style("prettify");
 		wp_enqueue_script("jquery");
 		wp_enqueue_script("bootstrap-dropdown");
+		wp_enqueue_script("jquery.tabSlideOut");
 		wp_enqueue_script("bootstrap-collapse");
 	}
 }
@@ -377,5 +378,26 @@ function the_error_page()
 {
 	include 'error.php';
 }
+
+function extra_editor_buttons($buttons) {
+	$buttons[] = 'fontselect';
+	$buttons[] = 'backcolor';
+	$buttons[] = 'image';
+	$buttons[] = 'media';
+	$buttons[] = 'anchor';
+	$buttons[] = 'sub';
+	$buttons[] = 'sup';
+	$buttons[] = 'hr';
+	$buttons[] = 'wp_page';
+	$buttons[] = 'cut';
+	$buttons[] = 'copy';
+	$buttons[] = 'paste';
+	$buttons[] = 'newdocument';
+	$buttons[] = 'code';
+	$buttons[] = 'cleanup';
+	$buttons[] = 'styleselect';
+	return $buttons;
+}
+add_filter("mce_buttons_3", "extra_editor_buttons");
 
 ?>

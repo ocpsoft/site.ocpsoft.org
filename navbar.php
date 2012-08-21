@@ -1,5 +1,5 @@
 <a id="top"></a>
-<div class="ocpsoft-mobile-navbar navbar navbar-fixed-top">
+<div id="banner" class="ocpsoft-mobile-navbar navbar navbar-fixed-top">
 	<div class="navbar-inner">
 		<div class="container">
 			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
