@@ -114,6 +114,7 @@ a.snippit-file {
 	color: #333333;
 	padding: 3px 10px 3px 10px;
 	text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
+	word-wrap: break-word;
 }
 
 code {

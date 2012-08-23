@@ -1,7 +1,7 @@
 <footer>
 
-	<div class="row-fluid">
-		<div class="span5">
+	<div class="container">
+		<div class="logo">
 			<a href="<?php bloginfo('url'); ?>"><img alt="OCPSoft logo" src="<?php bloginfo('stylesheet_directory');?>/img/desktop_logo_white.png" /> </a>
 
 		</div>

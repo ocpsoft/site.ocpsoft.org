@@ -34,6 +34,7 @@ function register_assets() {
 	wp_register_script( "jquery.tabSlideOut", get_bloginfo("template_url")."/js/jquery.tabSlideOut.js");
 	wp_register_script( "jquery.scrollTo", get_bloginfo("template_url")."/js/jquery.scrollTo.js");
 	wp_register_script( "toc.functions", get_bloginfo("template_url")."/js/toc.functions.js");
+	wp_register_script( "site", get_bloginfo("template_url")."/js/site.js");
 
 	if( !is_admin() )
 	{
@@ -46,6 +47,7 @@ function register_assets() {
 		wp_enqueue_script("bootstrap-dropdown");
 		wp_enqueue_script("jquery.tabSlideOut");
 		wp_enqueue_script("bootstrap-collapse");
+		wp_enqueue_script("site");
 	}
 }
 

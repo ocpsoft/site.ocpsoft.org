@@ -1,6 +1,6 @@
 <div class="sidebar span4">
 	<?php global $toc_active; if ($toc_active) : ?>
-	<div id="toc-outer">
+	<div id="toc-outer" class="desktop">
 		<div id="toc">
 			<div class="sidebar-widget">
 				<div class="sidebar-widget-content">

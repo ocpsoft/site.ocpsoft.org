@@ -37,7 +37,7 @@
 										</div>
 									</div>
 
-									<div class="post-entry">
+									<div class="entry">
 										<?php the_content(""); ?>
 									</div>
 

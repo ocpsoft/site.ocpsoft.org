@@ -43,6 +43,7 @@ body {
 
 code {
 	white-space: pre-wrap;
+	word-wrap: break-word;
 }
 
 /*
@@ -110,9 +111,16 @@ h1,h2,h3,h4,h5,h6 {
 	border-left: 1px solid #ddd;
 	text-align: center;
 	padding: 20px;
+	padding-top: 23px;
+	padding-bottom: 17px;
 	display: block;
 	text-transform: uppercase;
 	color: black;
+}
+
+.ocpsoft-nav>ul>li>a b.caret{
+	position: relative;
+	top: -3px;
 }
 
 .ocpsoft-nav>ul>li {
@@ -410,13 +418,7 @@ footer {
 	margin-right: auto;
 }
 
-footer>div {
-	float: left;
-	margin: 0 3% 20px;
-}
-
 footer ul {
-	padding: 10px 0 0;
 	margin: 0;
 }
 
@@ -443,7 +445,7 @@ footer a:hover {
 
 footer p {
 	clear: both;
-	margin: 100px auto 50px;
+	margin: 50px auto 50px;
 	background: #4f4f4f;
 	color: #eee;
 	text-align: center;
@@ -454,7 +456,24 @@ footer .caret {
 	border-top-color: white;
 }
 
+footer .logo, footer .column {
+	margin-left: 50px;
+	margin-bottom: 25px;
+}
+
+
+@media ( max-width : 767px) {
+	.desktop {
+		display: none;
+	}
+}
+
 @media ( min-width : 768px) {
+
+	.mobile {
+		display: none;
+        }
+
 	.hero-unit .primary {
 		width: 50%;
 		float: left;
@@ -483,6 +502,18 @@ footer .caret {
 	}
 	.ocpsoft-nav {
 		display: table;
+	}
+
+	footer .logo {
+		width: 40%;
+		float: left;
+		margin: 0px;
+	}
+
+	footer .column {
+		width: 20%;
+		float: left;
+		margin: 0px;
 	}
 }
 
@@ -629,6 +660,7 @@ footer .caret {
 
 .sidebar-widget-content {
 	padding: 10px;
+	overflow: hidden;
 }
 
 #toc {
@@ -771,12 +803,12 @@ footer .caret {
 #commentform {
 	margin: 1em 0;
 	margin-left: 20px;
-	width: 600px;
+	width: 100%;
 	padding: 10px;
 }
 
 #commentinputs {
-	width: 400px;
+	width: 90%;
 }
 
 #commentform input[type="text"],#commentform textarea {
@@ -801,7 +833,7 @@ footer .caret {
 }
 
 #commentform textarea {
-	width: 400px;
+	width: 100%;
 }
 /* End Comment Form */
 
