@@ -40,11 +40,12 @@ function register_assets() {
 	{
 		wp_enqueue_style("bootstrap");
 		wp_enqueue_style("responsive");
-		wp_enqueue_style("style");
 		wp_enqueue_style("alerts");
+		wp_enqueue_style("style");
 		wp_enqueue_style("prettify");
 		wp_enqueue_script("jquery");
 		wp_enqueue_script("bootstrap-dropdown");
+		wp_enqueue_script("bootstrap-collapse");
 		wp_enqueue_script("jquery.tabSlideOut");
 		wp_enqueue_script("bootstrap-collapse");
 		wp_enqueue_script("site");

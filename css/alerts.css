@@ -6,8 +6,8 @@
 	color: #444;
 }
 
-.entry .alert>a {
-	color: #B60;
+.entry .alert a {
+	color: #B60 !important;
 }
 
 .entry .alert>span,.entry .alert>pre,.entry .alert>div {
