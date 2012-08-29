@@ -723,6 +723,17 @@ footer .logo, footer .column {
 	display: none;
 }
 
+.commentlist .commentmetadata {
+	position: relative;
+	top: -43px;
+	right: -53px;
+}
+
+.commentlist .fn, .commentlist .says {
+	position: relative;
+	top: 10px;
+}
+
 .commentlist li.comment.depth-1 div.comment-body,.commentlist li.comment.depth-2 div.comment-body
 	{
 	margin-bottom: 9px;
