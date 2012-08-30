@@ -31,6 +31,10 @@ Text Domain: ocpsoft
 	font-style: italic;
 }
 
+html {
+	overflow-x: hidden;
+}
+
 body {
 	background: #383B3D !important;
 	padding: 0;
@@ -694,7 +698,11 @@ footer .logo, footer .column {
 	margin-top: 10px;
 }
 
+.commentlist ol {
+}
+
 .commentlist li {
+	list-style-type: none;
 	padding: 10px;
 	border-bottom: 1px solid #dddddd;
 }
@@ -724,6 +732,7 @@ footer .logo, footer .column {
 }
 
 .commentlist .commentmetadata {
+	display: inline;
 	position: relative;
 	top: -43px;
 	right: -53px;
@@ -767,7 +776,6 @@ footer .logo, footer .column {
 #commentform {
 	margin: 1em 0;
 	margin-left: 20px;
-	width: 100%;
 	padding: 10px;
 }
 

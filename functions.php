@@ -141,14 +141,14 @@ function my_search_form($text) {
  * ShortCodes
  */
 function init_common_shortcodes() {
-  add_shortcode('sourcecode', 'code_func');
-  add_shortcode('code', 'code_func');
+	add_shortcode('sourcecode', 'code_func');
+	add_shortcode('code', 'code_func');
 }
  
 function init_comment_shortcodes() {
-  remove_all_shortcodes();
-  init_common_shortcodes();
-  add_filter('comment_text', 'do_shortcode');
+	remove_all_shortcodes();
+	init_common_shortcodes();
+	add_filter('comment_text', 'do_shortcode', -10);
 }
  
 init_common_shortcodes();
@@ -160,6 +160,8 @@ function code_func($atts, $content)
 	$lang = htmlentities($lang);
 	return "<div class='snippit'><pre lang='$lang' class='prettyprint'>".trim($content)."</pre></div>";
 }
+add_shortcode('sourcecode', 'code_func');
+add_shortcode('code', 'code_func');
 
 // Embed HTML directly as a custom-field shortcode:
 // [field name=name-of-custom-field]

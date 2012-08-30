@@ -58,7 +58,7 @@ endif;
 		<label for="url"><small>Website</small></label></p>
 		<?php } ?>
 
-		<p><small><strong>Please note: </strong>In order to submit code or special characters, wrap it in <pre style="color: green; margin-bottom: 10px;">[sourcecode lang="xml"][/sourcecode]</pre> (for your language) - or your tags will be eaten.</small></p>
+		<p><small><strong>Please note: </strong>In order to submit code or special characters, wrap it in <pre style="color: green; margin-bottom: 10px;">[code lang="xml"][/code]</pre> (for your language) - or your tags will be eaten.</small></p>
 		<p><textarea name="comment" id="comment" cols="100%" rows="8" tabindex="4"></textarea></p>
 
 		<p><small><?php do_action('comment_form' , $post->ID); ?></small>

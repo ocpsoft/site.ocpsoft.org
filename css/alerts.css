@@ -84,10 +84,9 @@ pre.command.noborder {
 	padding: 0;
 }
 
-.snippit {
+.snippit, .wp_syntax pre {
 	margin-top: 15px;
 	margin-bottom: 15px;
-	white-space: pre-wrap;
 	border: 1px solid #AAAAAA;
 	border-radius: 5px 5px 5px 5px;
 	box-shadow: 1px 1px 5px #CCCCCC;
