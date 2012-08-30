@@ -62,7 +62,7 @@ endif;
 		<p><textarea name="comment" id="comment" cols="100%" rows="8" tabindex="4"></textarea></p>
 
 		<p><small><?php do_action('comment_form' , $post->ID); ?></small>
-		<input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" /></p>
+		<input name="submit" type="submit" id="submit" class="btn" tabindex="5" value="Submit Comment" /></p>
 
 		<?php if ('none' != get_settings("comment_moderation")) { ?>
 			<p><small><strong>Please note:</strong> Comment moderation is enabled and may delay your comment from appearing. 

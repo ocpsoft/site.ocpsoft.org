@@ -729,6 +729,14 @@ footer .logo, footer .column {
 	right: -53px;
 }
 
+.pingback .vcard {
+	margin-bottom: 20px;
+}
+
+.pingback .commentmetadata {
+	display: none;
+}
+
 .commentlist .fn, .commentlist .says {
 	position: relative;
 	top: 10px;
@@ -864,6 +872,19 @@ ul.featured li {
 	margin-top: 0px;
 }
 
+/**
+ * Newsletter Sign Up 
+ */
+#ns-checkbox > input {
+	float: left;
+}
+
+#ns-checkbox > label {
+	position: relative;
+	top: 3px;
+	left: 5px;
+}
+
 @media ( max-width : 767px) {
 	.desktop {
 		display: none;
@@ -872,6 +893,11 @@ ul.featured li {
 	.posts {
 		margin-right: 5px;
 		margin-left: 5px;
+	}
+
+	.tweetthis {
+		margin: auto auto 20px;
+		width: 160px;
 	}
 }
 
@@ -921,6 +947,17 @@ ul.featured li {
 		width: 20%;
 		float: left;
 		margin: 0px;
+	}
+
+	.tweetthis {
+		width: 20px;
+		position: fixed;
+		bottom: 10px;
+		right: 10px;
+	}
+
+	.tt {
+		float: left;
 	}
 }
 

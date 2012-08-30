@@ -137,9 +137,32 @@ function my_search_form($text) {
 	return $text;
 }
 
+/**
+ * ShortCodes
+ */
+function init_common_shortcodes() {
+  add_shortcode('sourcecode', 'code_func');
+  add_shortcode('code', 'code_func');
+}
+ 
+function init_comment_shortcodes() {
+  remove_all_shortcodes();
+  init_common_shortcodes();
+  add_filter('comment_text', 'do_shortcode');
+}
+ 
+init_common_shortcodes();
+add_filter('comments_template', 'init_comment_shortcodes');
+
+function code_func($atts, $content)
+{
+	$lang = $atts['lang'];
+	$lang = htmlentities($lang);
+	return "<div class='snippit'><pre lang='$lang' class='prettyprint'>".trim($content)."</pre></div>";
+}
+
 // Embed HTML directly as a custom-field shortcode:
 // [field name=name-of-custom-field]
-
 function field_func($atts) {
 	global $post;
 	$name = $atts['name'];
@@ -147,7 +170,6 @@ function field_func($atts) {
 
 	return do_shortcode(get_post_meta($post->ID, $name, true));
 }
-
 add_shortcode('field', 'field_func');
 
 function show_signature($atts)
@@ -162,7 +184,6 @@ function show_signature($atts)
 }
 
 add_shortcode('signature', 'show_signature');
-
 
 // Generate an Amazon Item link
 function amazon_func($atts) {
