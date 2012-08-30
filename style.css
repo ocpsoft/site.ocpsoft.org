@@ -698,6 +698,10 @@ footer .logo, footer .column {
 	margin-top: 10px;
 }
 
+.commentlist .comment-body {
+	overflow: hidden;
+}
+
 .commentlist ol {
 }
 
