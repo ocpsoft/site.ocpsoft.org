@@ -897,6 +897,12 @@ ul.featured li {
 	left: 5px;
 }
 
+/* WP-SYNTAX */
+
+.wp_syntax table {
+	width: 100%;
+}
+
 @media ( max-width : 767px) {
 	.desktop {
 		display: none;

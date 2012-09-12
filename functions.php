@@ -157,8 +157,7 @@ add_filter('comments_template', 'init_comment_shortcodes');
 function code_func($atts, $content)
 {
 	$lang = $atts['lang'];
-	$lang = htmlentities($lang);
-	return "<div class='snippit'><pre lang='$lang' class='prettyprint'>".trim(htmlspecialchars_decode($content))."</pre></div>";
+	return "<div class='snippit'><pre lang='$lang' class='prettyprint'>".trim($content)."</pre></div>";
 }
 add_shortcode('sourcecode', 'code_func');
 add_shortcode('code', 'code_func');
