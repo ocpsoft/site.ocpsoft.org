@@ -141,8 +141,8 @@ function my_search_form($text) {
  * ShortCodes
  */
 function init_common_shortcodes() {
-	add_shortcode('sourcecode', 'code_func');
-	add_shortcode('code', 'code_func');
+	add_shortcode('sourcecode', 'comment_code_func');
+	add_shortcode('code', 'comment_code_func');
 }
  
 function init_comment_shortcodes() {
@@ -157,10 +157,17 @@ add_filter('comments_template', 'init_comment_shortcodes');
 function code_func($atts, $content)
 {
 	$lang = $atts['lang'];
+	$content = htmlspecialchars($content);
 	return "<div class='snippit'><pre lang='$lang' class='prettyprint'>".trim($content)."</pre></div>";
 }
 add_shortcode('sourcecode', 'code_func');
 add_shortcode('code', 'code_func');
+
+function comment_code_func($atts, $content)
+{
+	$lang = $atts['lang'];
+	return "<div class='snippit'><pre lang='$lang' class='prettyprint'>".trim($content)."</pre></div>";
+}
 
 // This will occur when the comment is posted
 function plc_comment_post( $incoming_comment ) {
@@ -263,6 +270,7 @@ $callout_command_search_index = 0;
 $callout_command_matches = array();
 
 add_filter('the_content', 'callout_command_before_format', 7); // 7 is simply a lucky number, nothing more =)
+	$content = htmlspecialchars($content);
 function callout_command_before_format($content)
 {
 	return preg_replace_callback(
@@ -376,6 +384,7 @@ function slide_out($atts, $content)
 
 add_shortcode('slideout', 'slide_out');
 
+/* TOC */
 function toc($atts, $content)
 {
 	if(is_single() || is_page())
@@ -390,6 +399,17 @@ function toc($atts, $content)
 }
 
 add_shortcode('toc', 'toc');
+
+function tocd($atts, $content)
+{
+	if($atts[visible])
+		return "<h1><a href=\"#\"></a><hr/></h1>";
+	else
+		return "<h1 style='display: none;'><a href=\"#\"></a><hr/></h1>";
+	
+}
+add_shortcode('tocd', 'tocd');
+/* End TOC */
 
 if ( function_exists('register_sidebar') )
 {

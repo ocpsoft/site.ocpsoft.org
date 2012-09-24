@@ -39,6 +39,7 @@
 									</div>
 
 								</div>
+								<?php comments_template(); ?>
 
 								<?php endwhile; ?>
 
