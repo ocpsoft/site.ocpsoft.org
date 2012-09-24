@@ -400,15 +400,11 @@ function toc($atts, $content)
 
 add_shortcode('toc', 'toc');
 
-function tocd($atts, $content)
+function section($atts, $content)
 {
-	if($atts[visible])
-		return "<h1><a href=\"#\"></a><hr/></h1>";
-	else
-		return "<h1 style='display: none;'><a href=\"#\"></a><hr/></h1>";
-	
+	return '<span class="toc hr"><a href="#"></a><hr/></span>';
 }
-add_shortcode('tocd', 'tocd');
+add_shortcode('section', 'section');
 /* End TOC */
 
 if ( function_exists('register_sidebar') )
