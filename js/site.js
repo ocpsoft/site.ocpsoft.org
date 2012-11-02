@@ -1,7 +1,7 @@
 jQuery(function() {
 
 	// Find all YouTube videos
-	var $allVideos = jQuery("iframe[src^='http://www.youtube.com'],iframe[src^='http://www.youtube-nocookie.com']"),
+	var $allVideos = jQuery("iframe[src^='http://www.youtube.com'],iframe[src^='http://www.youtube-nocookie.com'],iframe[src^='http://player.vimeo.com']"),
 
 	    // The element that is fluid width
 	    $fluidEl = jQuery(".entry");
