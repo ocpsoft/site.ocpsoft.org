@@ -9,6 +9,7 @@ $role = get_role( 'contributor' );
 $role->add_cap( 'unfiltered_html' );
 
 add_action('wp_enqueue_scripts', 'register_assets');
+add_theme_support( 'post-thumbnails' ); 
 
 function register_assets() {
 	wp_register_style("style", get_bloginfo('template_url')."/style.css");
