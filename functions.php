@@ -10,9 +10,11 @@ $role->add_cap( 'unfiltered_html' );
 
 add_action('wp_enqueue_scripts', 'register_assets');
 add_theme_support( 'post-thumbnails' ); 
+add_image_size( 'yarpp-thumbnail', 150, 150, true );
 
 function register_assets() {
 	wp_register_style("style", get_bloginfo('template_url')."/style.css");
+	wp_register_style("style-thumbnails", get_bloginfo('template_url')."/css/thumbnails.php");
 	wp_register_style("prettify", get_bloginfo('template_url')."/js/google-code-prettify/prettify.css");
 	wp_register_style("alerts", get_bloginfo('template_url')."/css/alerts.css");
 	wp_register_style("bootstrap", get_bloginfo('template_url')."/css/bootstrap.css");
