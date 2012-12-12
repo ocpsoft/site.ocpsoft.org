@@ -8,7 +8,7 @@ function toc_build(section_scroll_offset) {
 		var section = jQuery(this);
 
 		contents = contents + "<li><a id='"+section.attr("id")+"_link' href='#" + section.attr("id") + "'>"+section.html()+"</a></li>";
-		jQuery("<a name='"+section.attr("id")+"'></a>").insertBefore(section);
+		jQuery("<a id='"+section.attr("id")+"' name='"+section.attr("id")+"'></a>").insertBefore(section);
 
 	});
 
@@ -26,7 +26,7 @@ function toc_init() {
 	var $toc_outer = jQuery("#toc-outer");
 
 	var section_offset = -40;
-	var section_scroll_offset = -30;
+	var section_scroll_offset = 10;
 	var sections = jQuery(".entry h1, .entry h2, .toc, #comments"); //jQuery objects
 	var sectionOffsets = {}; //map: id -> int
 	var currentSection = false;
