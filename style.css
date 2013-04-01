@@ -153,7 +153,8 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .projects>ul {
-	width: 710px;
+        /* change to 710 for full width */
+	width: 530px;
 	position: absolute;
 	left: -174px;
 }
@@ -469,6 +470,20 @@ footer .logo, footer .column {
 /*
   Wordpress Styles
 */
+.box-rounded {
+	-webkit-border-top-right-radius: 7px;
+	-webkit-border-top-left-radius: 7px;
+	-webkit-border-bottom-right-radius: 7px;
+	-webkit-border-bottom-left-radius: 7px;
+	-moz-border-radius-topright: 7px;
+	-moz-border-radius-topleft: 7px;
+	-moz-border-radius-bottomright: 7px;
+	-moz-border-radius-bottomleft: 7px;
+	border-top-right-radius: 7px;
+	border-top-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+	border-bottom-left-radius: 7px;
+}
 .box-shadow {
 	-moz-box-shadow: 0 0 15px #333;
 	-webkit-box-shadow: 0 0 15px #333;
@@ -557,6 +572,12 @@ footer .logo, footer .column {
 
 .post-title-meta {
 	color:
+}
+
+.post .entry .tip a[href^="http://twitter.com"] {
+	background: url(img/twitter.png) no-repeat left center;
+	background-position: 0 -2px;
+	padding: 2px 0px 2px 20px;
 }
 
 /*
@@ -930,6 +951,27 @@ ul.featured li {
 #bookshelf .bookshelf_price{
 	margin-right: 25px;
 }
+
+/* FT Signature Manager */
+
+.signature {
+	text-align: justify; 
+	margin-top: 25px; 
+	padding: 15px; 
+	padding-bottom: 5px;
+}
+
+.signature-profile-img {
+	margin-bottom: 15px; 
+	margin-right: 15px; 
+	width: 120px; 
+	float: left;
+}
+
+.signature-header {
+	margin-top: 0px;
+}
+
 
 /* WP-SYNTAX Plugin */
 

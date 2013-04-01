@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Thumbnails
+YARPP Template: Thumbnails
 Description: Requires a theme which supports post thumbnails
 Author: Lincoln Baxter, III
 */ ?>
