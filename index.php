@@ -10,7 +10,7 @@
 		<div class="ocpsoft-middlearea">
 			<div class="ocpsoft-middlearea-shadow-top">
 				<div class="ocpsoft-middlearea-shadow-bottom">
-					<div class="posts">
+					<div class="posts news">
 						<?php if (!have_posts()) : ?>
 						<?php the_error_page(); ?>
 						<?php else: ?>

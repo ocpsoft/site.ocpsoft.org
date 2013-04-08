@@ -470,6 +470,26 @@ footer .logo, footer .column {
 /*
   Wordpress Styles
 */
+div.author {
+   border: 0px;
+   border-top: solid 2px #EEEEEE;
+   text-align: justify; 
+   margin-top: 25px; 
+   padding: 15px; 
+   padding-bottom: 5px;
+}
+
+.author img, .author-photo {
+   margin-bottom: 15px; 
+   margin-right: 15px; 
+   width: 120px; 
+   float: left;
+}
+
+.author > h1, .author > h2, .author > h3, .author > h4, .author > h5, .author > h6 {
+   margin-top: 0px !important;
+}
+
 .box-rounded {
 	-webkit-border-top-right-radius: 7px;
 	-webkit-border-top-left-radius: 7px;
