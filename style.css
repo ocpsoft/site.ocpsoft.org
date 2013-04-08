@@ -10,6 +10,13 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
 Text Domain: ocpsoft
 */
+@import url(http://fonts.googleapis.com/css?family=Varela+Round|Open+Sans:400italic,700italic,400,700);
+@import url(http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css);
+/*
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,700);
+@import url(http://fonts.googleapis.com/css?family=Noticia+Text:400,400italic);
+@import url(http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css);
+
 @font-face {
 	font-family: 'Helvetica Neue Light';
 	src: url('fonts/HelveticaNeueLTPro-Lt.otf') format('opentype');
@@ -30,7 +37,7 @@ Text Domain: ocpsoft
 	font-weight: normal;
 	font-style: italic;
 }
-
+*/
 html {
 	overflow-x: hidden;
 }
@@ -38,10 +45,11 @@ html {
 body {
 	background: #383B3D !important;
 	padding: 0;
-	font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial,
-		Arial, sans-serif;
+	/* font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial,
+		Arial, sans-serif; */
+	font-family: "Open Sans", Verdana, Arial, sans-serif;
 	font-weight: 300;
-	font-size: 13px;
+	font-size: 14px;
 	line-height: 20px;
 }
 
@@ -115,8 +123,8 @@ h1,h2,h3,h4,h5,h6 {
 	border-left: 1px solid #ddd;
 	text-align: center;
 	padding: 20px;
-	padding-top: 23px;
-	padding-bottom: 17px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	display: block;
 	text-transform: uppercase;
 	color: black;
@@ -713,7 +721,7 @@ div.author {
     font-weight: bold;
     padding: 10px 12px;
     position: fixed;
-    right: 0;
+    right: 20px;
     text-decoration: none;
     top: -50px;
     z-index: 101;
