@@ -1018,6 +1018,7 @@ ul.featured li {
 	}
 
 	.tweetthis {
+		display: none;
 		margin: auto auto 20px;
 		width: 160px;
 	}
