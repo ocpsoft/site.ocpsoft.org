@@ -3,6 +3,7 @@
 		<h1>Sorry, this page has been eaten by sharks</h1>
 		Maybe you could try another page? That one might still be around. If you want to look at some <a href="<?php bloginfo('url'); ?>">cool open-source software</a>, you could do
 		that, too; otherwise, if you're sticking around, could you feed our pets? They're not angry, they just get <i>so hungry.</i>
+		I mean, they already ate <?php echo $_SERVER['REQUEST_URI']?>...
 	</div>
 </div>
 <div class="row" style="text-align: center;">
