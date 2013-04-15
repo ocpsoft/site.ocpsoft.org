@@ -1,10 +1,9 @@
-function toc_build(section_scroll_offset) {
+function toc_build(section_scroll_offset, selectors) {
 
 	var $toc = jQuery('#toc-contents');
 	var contents = "<ol>";
 
-
-	jQuery("#top, .entry h1, .toc, #comments").each(function(idx) {
+	jQuery(selectors).each(function(idx) {
 		var section = jQuery(this);
 
 		contents = contents + "<li><a id='"+section.attr("id")+"_link' href='#" + section.attr("id") + "'>"+section.html()+"</a></li>";
@@ -20,16 +19,22 @@ function toc_build(section_scroll_offset) {
 
 }
 
-function toc_init() {
+function toc_init(selectors) {
+	if(!selectors)
+		selectors = "#top, .entry h1, .toc, #comments";
+
 	var $toc = jQuery('#toc');
 	var $toc_contents = jQuery('#toc-contents');
 	var $toc_outer = jQuery("#toc-outer");
 
 	var section_offset = -40;
 	var section_scroll_offset = 10;
-	var sections = jQuery(".entry h1, .entry h2, .toc, #comments"); //jQuery objects
+	var sections = jQuery(selectors); //jQuery objects
 	var sectionOffsets = {}; //map: id -> int
 	var currentSection = false;
+
+	$toc_outer.css({height: "auto", width: "auto"});
+	$toc.css({height: "auto", width: "auto"});
 
 	var i = 0;
 	sections.each(function(idx) {
@@ -39,7 +44,7 @@ function toc_init() {
 		i++;
 	});
 
-	toc_build(section_scroll_offset);
+	toc_build(section_scroll_offset, selectors);
 
 	var tocMetrics = {
 		top: $toc.position().top,

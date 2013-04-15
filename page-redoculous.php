@@ -31,21 +31,11 @@
 
 								<div class="post" id="post-<?php the_ID(); ?>">
 
-									<div class="post-title">
-										<div class="post-title-text">
-											<h1>
-												<?php the_title(); ?>
-											</h1>
-										</div>
-									</div>
-
 									<div class="entry">
 										<?php the_content('Read the rest of this entry &raquo;'); ?>
 									</div>
 
 								</div>
-								<?php comments_template(); ?>
-
 								<?php endwhile; ?>
 
 								<p align="center">
