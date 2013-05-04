@@ -27,14 +27,6 @@
 								<div class="post" id="post-<?php the_ID(); ?>">
 
 									<div>
-										<div class="post-dzone">
-											<script type="text/javascript">var dzone_url = '<?php echo get_permalink(); ?>';</script>
-											<script type="text/javascript">var dzone_title = '<?php the_title(); ?>';</script>
-											<script type="text/javascript">var dzone_blurb = '<?php the_title(); ?>';</script>
-											<script type="text/javascript">var dzone_style = '1';</script>
-											<script type="text/javascript" src="http://widgets.dzone.com/links/widgets/zoneit.js"></script>
-										</div>
-
 										<div class="post-title">
 											<div class="post-title-meta">
 												<img class="entry-img" src="<?php bloginfo('stylesheet_directory'); ?>/img/timeicon.gif" alt="" />

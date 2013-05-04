@@ -51,6 +51,5 @@
 		yoast_analytics();
 	}
 	?>
-	<script type="text/javascript">jQuery(function(){jQuery('.slide-out-div').tabSlideOut({ tabHandle: '.handle',tabLocation: 'left',speed: 300,action: 'click',topPos: '300px', leftPos: '20px', fixedPosition: true});});</script>
 	<a class="visible-desktop" href="#" id="toTop">Top</a>
 </footer>
