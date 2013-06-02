@@ -3,7 +3,7 @@ function toc_build(section_scroll_offset, selectors) {
 	var $toc = jQuery('#toc-contents');
 	var contents = "<ol>";
 
-	jQuery(selectors).each(function(idx) {
+	jQuery(selectors).not(".notoc").each(function(idx) {
 		var section = jQuery(this);
 
 		contents = contents + "<li><a id='"+section.attr("id")+"_link' href='#" + section.attr("id") + "'>"+section.html()+"</a></li>";
@@ -29,7 +29,7 @@ function toc_init(selectors) {
 
 	var section_offset = -40;
 	var section_scroll_offset = 10;
-	var sections = jQuery(selectors); //jQuery objects
+	var sections = jQuery(selectors).not(".notoc"); //jQuery objects
 	var sectionOffsets = {}; //map: id -> int
 	var currentSection = false;
 
