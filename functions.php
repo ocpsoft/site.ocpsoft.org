@@ -468,4 +468,22 @@ function extra_editor_buttons($buttons) {
 }
 add_filter("mce_buttons_3", "extra_editor_buttons");
 
+add_filter('upload_mimes', 'custom_upload_mimes');
+function custom_upload_mimes ( $existing_mimes = array() ) {
+
+    // add your extension to the array
+    $existing_mimes['ppt|pot|pps'] = 'application/vnd.ms-powerpoint';
+    $existing_mimes['jar|war|ear|zip'] = 'application/zip';
+    $existing_mimes['xml'] = 'text/xml';
+    $existing_mimes['java|jsp|groovy|css'] = 'text/plain';
+    $existing_mimes['js'] = 'text/plain';
+    $existing_mimes['html|xhtml'] = 'text/html';
+
+    // removing existing file types
+    unset( $existing_mimes['exe'] );
+
+    // and return the new full result
+    return $existing_mimes;
+}
+
 ?>
