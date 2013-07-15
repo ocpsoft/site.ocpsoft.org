@@ -5,10 +5,14 @@
 <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
 <meta name="author" content="Lincoln Baxter III| OCPSoft, Mike McNeil | Balderdash Design Co." />
 
+<!-- Service Verifications -->
 <meta name="verify-v1" content="OQ0iBLFyJUjf6cQTqE2cgArwAgTFHdaaYd5+AWePVBY=" />
 <meta name="google-site-verification" content="zNYqxiq_DV1Knn6U762dCVkUaJpw940jyHcn2qEwNIs" />
 <meta name="google-site-verification" content="eB9eznz7aE8faLSEG6LtyZlfKZGw69Z-0NLHFiMdgmM" />
 <meta name="google-site-verification" content="eB9eznz7aE8faLSEG6LtyZlfKZGw69Z-0NLHFiMdgmM" />
+<meta name="msvalidate.01" content="A54BE748E8688A384395C6901A272562" />
+<!-- End Service Verifications -->
+
 <meta name="viewport" content="width=device-width" />
 
 <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />

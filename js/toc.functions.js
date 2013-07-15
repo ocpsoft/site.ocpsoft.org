@@ -19,11 +19,14 @@ function toc_build(section_scroll_offset, selectors) {
 
 }
 
-function toc_init(selectors) {
+function toc_init(tocId, selectors) {
+
+	if(!tocId)
+		tocOd = "#toc";
 	if(!selectors)
 		selectors = "#top, .entry h1, .toc, #comments";
 
-	var $toc = jQuery('#toc');
+	var $toc = jQuery(tocId);
 	var $toc_contents = jQuery('#toc-contents');
 	var $toc_outer = jQuery("#toc-outer");
 

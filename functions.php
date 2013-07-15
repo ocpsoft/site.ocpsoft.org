@@ -394,7 +394,7 @@ function toc($atts, $content)
 	{
 		wp_enqueue_script( "jquery.scrollTo" );
 		wp_enqueue_script( "toc.functions" );
-		$html = "<script type='text/javascript'>jQuery(document).ready(function(){toc_init();});</script>";
+		$html = "<script type='text/javascript'>jQuery(document).ready(function(){toc_init('.sidebar #toc');});</script>";
 		global $toc_active;
 		$toc_active = true;
 	}
