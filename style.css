@@ -162,7 +162,8 @@ h1,h2,h3,h4,h5,h6 {
 
 .projects>ul {
         /* change to 710 for full width */
-	width: 530px;
+        /* change to 530 for 3 columns */
+	width: 710px;
 	position: absolute;
 	left: -174px;
 }
@@ -1100,4 +1101,3 @@ ul.featured li {
 		float: left;
 	}
 }
-
