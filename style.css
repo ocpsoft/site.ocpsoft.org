@@ -563,7 +563,9 @@ div.author {
 
 .post {
 	margin-bottom: 40px;
+	line-height: 26px;
 }
+
 
 .post-dzone {
 	float: left;
@@ -601,6 +603,19 @@ div.author {
 
 .post-title-meta {
 	color:
+}
+
+.post p {
+	margin-top: 05px
+}
+
+.post ul, .post ol {
+	padding-top: 10px;	
+}
+
+.post li {
+	display: inline-block;
+	padding-bottom: 10px;
 }
 
 .post .entry .tip a[href^="http://twitter.com"] {
